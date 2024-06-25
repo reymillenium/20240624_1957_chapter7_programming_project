@@ -168,8 +168,8 @@ string getMostRainfallMonth(const vector<string> &months, double rainfalls[], co
 }
 
 void displayResults(const double totalRainfal, const double averageRainfall, const string &leastRainfallMonth, const string &mostRainfallMonth) {
-    cout << "Total rainfall " << totalRainfal << endl;
-    cout << "Average rainfall " << averageRainfall << endl;
+    cout << "Total rainfall: " << totalRainfal << endl;
+    cout << "Average rainfall: " << averageRainfall << endl;
     cout << "Least rainfall in: " << leastRainfallMonth << endl;
     cout << "Most rainfall in: " << mostRainfallMonth << endl;
 }
