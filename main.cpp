@@ -19,6 +19,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <climits>
 
 using std::cout;
 using std::endl;
