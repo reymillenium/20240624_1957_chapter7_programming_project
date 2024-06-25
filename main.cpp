@@ -172,6 +172,9 @@ void scoldUserIfInvalidInput(long double, double);
 
 // CUSTOM FUNCTIONS
 
+template<int N>
+void loadRainfalls(const vector<string> &, double (&)[N]);
+
 string getLeastRainfallMonth(const vector<string> &, double [], int);
 
 string getMostRainfallMonth(const vector<string> &, double [], int);
@@ -202,9 +205,7 @@ int main() {
     double totalRainfall {0};
     double averageRainfall {0.0};
 
-    for (int i = 0; i < MONTHS_AMOUNT; i++) {
-        rainfalls[i] = getDouble("Enter rainfall for " + months[i], 0, INT_MAX, false, "invalid data (negative rainfall) -- retry");
-    }
+    loadRainfalls(months, rainfalls);
 
     totalRainfall = sumOfDoublesWithRangeOverReference(rainfalls);
     averageRainfall = averageAmongDoublesWithRangeOverReference(rainfalls);
@@ -566,7 +567,15 @@ void scoldUserIfInvalidInput(const long double value, const double minValue) {
 
 // CUSTOM FUNCTIONS
 
-void loadRainfalls() {
+
+// double averageAmongDoublesWithRangeOverReference(double (&doublesArray)[N]);
+
+template<int N>
+void loadRainfalls(const vector<string> &months, double (&rainfalls)[N]) {
+    const int arraySize = sizeof(rainfalls) / sizeof(rainfalls[0]);
+    for (int i = 0; i < arraySize; i++) {
+        rainfalls[i] = getDouble("Enter rainfall for " + months[i], 0, INT_MAX, false, "invalid data (negative rainfall) -- retry");
+    }
 }
 
 string getLeastRainfallMonth(const vector<string> &months, double rainfalls[], const int arraySize) {
