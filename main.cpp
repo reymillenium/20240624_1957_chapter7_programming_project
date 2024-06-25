@@ -118,20 +118,20 @@ string ordinalFromNumber(long long int);
 bool isPrime(unsigned long long int);
 
 // Calculates the sum of all the elements inside an array of integers
-int neatSumOfIntegers(const int [], int);
+int simpleSumOfIntegers(const int [], int);
 
 // Calculates the sum of all the elements inside an array of integers
-int simpleSumOfIntegers(const int [], int);
+int neatSumOfIntegers(const int [], int);
 
 // Calculates the sum of all the elements inside an array of integers
 template<int N>
 int sumOfIntegersWithRangeOverReference(int (&)[N]);
 
 // Calculates the sum of all the elements inside an array of doubles
-double neatSumOfDoubles(const double [], int);
+double simpleSumOfDoubles(const double [], int);
 
 // Calculates the sum of all the elements inside an array of doubles
-double simpleSumOfDoubles(const double [], int);
+double neatSumOfDoubles(const double [], int);
 
 // Calculates the sum of all the elements inside an array of doubles
 template<int N>
@@ -206,15 +206,10 @@ int main() {
         rainfalls[i] = getDouble("Enter rainfall for " + months[i], 0, INT_MAX, false, "invalid data (negative rainfall) -- retry");
     }
 
-    totalRainfall = neatSumOfDoubles(rainfalls, MONTHS_AMOUNT);
-    averageRainfall = neatAverageAmongDoubles(rainfalls, MONTHS_AMOUNT);
+    totalRainfall = sumOfDoublesWithRangeOverReference(rainfalls);
+    averageRainfall = averageAmongDoublesWithRangeOverReference(rainfalls);
     const string leastRainfallMonth = getLeastRainfallMonth(months, rainfalls, MONTHS_AMOUNT);
     const string mostRainfallMonth = getMostRainfallMonth(months, rainfalls, MONTHS_AMOUNT);
-
-    const double temp = sumOfDoublesWithRangeOverReference(rainfalls);
-    printLine(temp);
-    printLine(averageAmongDoublesWithRangeOverReference(rainfalls));
-
 
     displayResults(totalRainfall, averageRainfall, leastRainfallMonth, mostRainfallMonth);
     return 0;
@@ -481,18 +476,24 @@ double neatAverageAmongIntegers(const int array[], const int length) {
     return neatSumOfIntegers(array, length) / static_cast<double>(length);
 }
 
-
 // Calculates the average among all the numbers inside an array of integers
+template<int N>
+int averageAmongIntegersWithRangeOverReference(int (&integersArray)[N]) {
+    const int length = sizeof(integersArray) / sizeof(integersArray[0]);
+    return sumOfIntegersWithRangeOverReference(integersArray) / length;
+}
+
+// Calculates the average among all the numbers inside an array of doubles
 double simpleAverageAmongDoubles(const double array[], const int length) {
     return simpleSumOfDoubles(array, length) / length;
 }
 
-// Calculates the average among all the numbers inside an array of integers
+// Calculates the average among all the numbers inside an array of doubles
 double neatAverageAmongDoubles(const double array[], const int length) {
     return neatSumOfDoubles(array, length) / length;
 }
 
-// Calculates the average among all the numbers inside an array of integers
+// Calculates the average among all the numbers inside an array of doubles
 template<int N>
 double averageAmongDoublesWithRangeOverReference(double (&doublesArray)[N]) {
     const int length = sizeof(doublesArray) / sizeof(doublesArray[0]);
