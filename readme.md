@@ -72,7 +72,24 @@ And in order to run that a.out file, we must execute on the terminal:
 ```terminal
 reinier@reinier % ./your_prefered_executable_file_name
 
-
+Enter rainfall for January: 2
+Enter rainfall for February: 3
+Enter rainfall for March: 2
+Enter rainfall for April: 43
+Enter rainfall for May: 54
+Enter rainfall for June: 34
+Enter rainfall for July: 65
+Enter rainfall for August: 34
+Enter rainfall for September: 65
+Enter rainfall for October: 1
+Enter rainfall for November: 0
+Enter rainfall for December: -2
+invalid data (negative rainfall) -- retry
+Enter rainfall for December: 3
+Total rainfall 306
+Average rainfall 25.5
+Least rainfall in: November
+Most rainfall in: July
   
 Process finished with exit code 0
 reinier@reinier % 
