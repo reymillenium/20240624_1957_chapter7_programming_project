@@ -1,19 +1,19 @@
 /**
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
- *                                                                   *
- *   Name: Rainfall                                                  *
- *                                                                   *
- *   Purpose:                                                        *
- *   Receives 12 rainfall values provided by the user from the       *
- *   console & and stores them in an array. And then based on them,  *
- *   it calculates the total rainfall, the average rainfall,         *
- *   the least rainfall month, and the most rainfall month.          *
- *                                                                   *
- *   More Details:                                                   *
- *   https://github.com/reymillenium/20240621_0127_arrays_intro      *
- *                                                                   *
- *                                                                   *
- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
+ *                                                                                 *
+ *   Name: Rainfall                                                                *
+ *                                                                                 *
+ *   Purpose:                                                                      *
+ *   Receives 12 rainfall values provided by the user from the                     *
+ *   console & and stores them in an array. And then based on them,                *
+ *   it calculates the total rainfall, the average rainfall,                       *
+ *   the least rainfall month, and the most rainfall month.                        *
+ *                                                                                 *
+ *   More Details:                                                                 *
+ *   https://github.com/reymillenium/20240624_1957_chapter7_programming_project    *
+ *                                                                                 *
+ *                                                                                 *
+ * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
  **/
 
 #include <iostream>
